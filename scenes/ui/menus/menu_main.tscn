@@ -10,12 +10,12 @@ offset_left = 315.0
 offset_top = 42.0
 offset_right = 824.0
 offset_bottom = 329.0
-text = "Кнопка Бля!"
+text = "Вход"
 
 [node name="quit" type="Button" parent="." unique_id=190147398]
-offset_left = 347.0
+offset_left = 321.0
 offset_top = 340.0
-offset_right = 612.0
+offset_right = 820.0
 offset_bottom = 605.0
 text = "Выход"
 
