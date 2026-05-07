@@ -29,6 +29,38 @@ region = Rect2(224, 0, 56, 56)
 atlas = ExtResource("2_qs144")
 region = Rect2(280, 0, 56, 56)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d2gj"]
+atlas = ExtResource("2_qs144")
+region = Rect2(0, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uywjs"]
+atlas = ExtResource("2_qs144")
+region = Rect2(56, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bt5b"]
+atlas = ExtResource("2_qs144")
+region = Rect2(112, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njbc2"]
+atlas = ExtResource("2_qs144")
+region = Rect2(168, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1quh"]
+atlas = ExtResource("2_qs144")
+region = Rect2(224, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqt2m"]
+atlas = ExtResource("2_qs144")
+region = Rect2(280, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nxs6"]
+atlas = ExtResource("2_qs144")
+region = Rect2(336, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig8s1"]
+atlas = ExtResource("2_qs144")
+region = Rect2(392, 224, 56, 56)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs144"]
 atlas = ExtResource("2_qs144")
 region = Rect2(0, 112, 56, 56)
@@ -88,6 +120,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8d2gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uywjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bt5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njbc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1quh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqt2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nxs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig8s1")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qs144")
 }, {
 "duration": 1.0,
@@ -125,7 +186,9 @@ shape = SubResource("CapsuleShape2D_lvkaf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1691150357]
 position = Vector2(2, -13)
 sprite_frames = SubResource("SpriteFrames_ejsgd")
-animation = &"Run"
+animation = &"Jump"
 autoplay = "Idle"
-frame = 7
-frame_progress = 0.51028717
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=731880851]
+zoom = Vector2(5, 5)
+process_callback = 0

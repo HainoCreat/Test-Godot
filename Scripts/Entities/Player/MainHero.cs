@@ -5,6 +5,17 @@ public partial class MainHero : CharacterBody2D
 {
 	public const float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
+	
+	private AnimatedSprite2D _animatedSprite;
+	
+	public override void _Ready()
+	{
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		if (_animatedSprite == null)
+		{
+			GD.PrintErr("AnimatedSprite2D не подключен как дочерний узел.");
+		}
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -36,5 +47,36 @@ public partial class MainHero : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+		
+		UpdateAnimations(direction.X, IsOnFloor());
+	}
+		
+	private void UpdateAnimations(float horizontalDirection, bool isOnFloor)
+	{
+		if (_animatedSprite == null) 
+		{
+			return;
+		}
+
+		if (!isOnFloor)
+		{
+			_animatedSprite.Play("Jump");
+		}
+		else if (Mathf.Abs(horizontalDirection) > 0.01f)
+		{
+			_animatedSprite.Play("Run");
+			_animatedSprite.FlipH = horizontalDirection < 0;
+		}
+		else
+		{
+			if (_animatedSprite.SpriteFrames.HasAnimation("Idle"))
+			{
+				_animatedSprite.Play("Idle");
+			}
+			else
+			{
+				_animatedSprite.Stop(); 
+			}
+		}
 	}
 }
