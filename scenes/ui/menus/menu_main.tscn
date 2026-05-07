@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bxnfkrm4v8snc"]
+
+[ext_resource type="Script" uid="uid://desib1dskb7h4" path="res://Scripts/UI/Menus/MenuMain.cs" id="1_c5lit"]
+
+[node name="menu_main" type="Node2D" unique_id=1290532561]
+script = ExtResource("1_c5lit")
+
+[node name="start" type="Button" parent="." unique_id=1009184083]
+offset_left = 315.0
+offset_top = 42.0
+offset_right = 824.0
+offset_bottom = 329.0
+text = "Кнопка Бля!"
+
+[node name="quit" type="Button" parent="." unique_id=190147398]
+offset_left = 347.0
+offset_top = 340.0
+offset_right = 612.0
+offset_bottom = 605.0
+text = "Выход"
+
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
