@@ -1,6 +1,25 @@
 [gd_scene format=3 uid="uid://did5q7mbhfea4"]
 
 [ext_resource type="Script" uid="uid://lvcunpypvxs5" path="res://Scripts/Levels/Start.cs" id="1_p38nx"]
+[ext_resource type="PackedScene" uid="uid://bkjdakwehlj27" path="res://assets/2D/sprites/player/main_hero.tscn" id="2_7jk1x"]
 
 [node name="start" type="Node2D" unique_id=478734140]
 script = ExtResource("1_p38nx")
+
+[node name="main_hero" parent="." unique_id=466317189 instance=ExtResource("2_7jk1x")]
+position = Vector2(135, 192)
+
+[node name="Label" type="Label" parent="." unique_id=85050565]
+offset_right = 294.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 25
+text = "1 тестовый уровень"
+
+[node name="Button" type="Button" parent="." unique_id=1670572170]
+offset_left = 306.0
+offset_top = 9.0
+offset_right = 512.0
+offset_bottom = 121.0
+text = "Выход"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

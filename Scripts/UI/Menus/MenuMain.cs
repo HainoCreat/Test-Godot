@@ -7,4 +7,9 @@ public partial class MenuMain : Node
 	{
 		GetTree().Quit();
 	}
+	
+	private void _on_start_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/Levels/start.tscn");
+	}
 }
