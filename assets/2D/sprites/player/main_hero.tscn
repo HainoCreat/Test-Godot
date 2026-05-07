@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bkjdakwehlj27"]
+
+[ext_resource type="Script" uid="uid://0gpinoj0vwbo" path="res://Scripts/Entities/Player/MainHero.cs" id="1_vlfq5"]
+[ext_resource type="Texture2D" uid="uid://cvwohdvjbax7s" path="res://assets/2D/sprites/player/main_hero.png" id="2_qs144"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvkaf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bep63"]
+atlas = ExtResource("2_qs144")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkn4u"]
+atlas = ExtResource("2_qs144")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s05mw"]
+atlas = ExtResource("2_qs144")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkgbm"]
+atlas = ExtResource("2_qs144")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqd8b"]
+atlas = ExtResource("2_qs144")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1kkh"]
+atlas = ExtResource("2_qs144")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejsgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bep63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkn4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s05mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkgbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqd8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1kkh")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="main_hero" type="CharacterBody2D" unique_id=466317189]
+script = ExtResource("1_vlfq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892410953]
+shape = SubResource("CapsuleShape2D_lvkaf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1691150357]
+position = Vector2(2, -13)
+sprite_frames = SubResource("SpriteFrames_ejsgd")
+animation = &"Idle"
+autoplay = "Idle"

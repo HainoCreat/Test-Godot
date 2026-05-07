@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://did5q7mbhfea4"]
+
+[ext_resource type="Script" uid="uid://lvcunpypvxs5" path="res://Scripts/Levels/Start.cs" id="1_p38nx"]
+
+[node name="start" type="Node2D" unique_id=478734140]
+script = ExtResource("1_p38nx")
